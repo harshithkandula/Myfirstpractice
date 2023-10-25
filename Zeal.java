@@ -1,13 +1,15 @@
-"sample"
 import java.util.*;
-class Zeal{
-    Scanner sc=new Scanner(System.in);
-    System.out.println("Enter Zeal Characterstics");
-    String[] a=new String[n];
-    for (int i=0;i<n;i++){
-     a[i]=sc.nextLine();
-      }
-   for(int j=0;j<n;j++){
-   System.out.println(a[j]); 
-   }
+public class Main
+{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the name");
+        String s=sc.nextLine();
+        int l=s.length();
+        
+        for(int i=0;i<l;i++){
+            char c=s.charAt(i);
+            System.out.println(c);
+        }
+    }
 }
