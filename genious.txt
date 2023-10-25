@@ -1,0 +1,18 @@
+"sample file" 
+import java.util,.*;
+class Genious{
+      Scanner sc=new Scanner(System.in);
+      System.out.println("Enter the number");
+      String str=sc.nextLine();
+      int l=str.length();
+      int[] a=new int[n];
+      for(int i=0;i<n;i++){
+       a[i] = Integer.parseInt(str,i);
+      }
+       int s=0
+       for(int j=0;j<n;j++){
+         s=+a[i];
+        }
+
+       System.out.println("Sum of digits of given number : "+s);
+    }
