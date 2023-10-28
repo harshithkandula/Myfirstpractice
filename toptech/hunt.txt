@@ -1,0 +1,31 @@
+import java.util.*;
+class Hunt{
+   public static void main(String args[]){
+             Scanner sc=new Scanner(System.in);
+             String test=sc.nextLine();
+             count(test);
+          }
+   public static void count(String x){
+           String[] l=x.toStringArray();
+           int letter=0;
+           int num=0;
+           int space=0;
+           int other=0;
+     
+         for(i=0;i<l.length();i++){
+        if(Character.isLetter(l[i])){
+              letter++;
+             }
+         else if(Character.isDigit(l[i])){
+              num++;
+             }
+        else if(Character.isSpaceChar(l[i])){
+               space++;
+              }
+           else{
+                other++
+               }
+          }
+        System.out.println("Letter = "+letter+"\n""Number = "+num+"\n""Space = "+space+"\n""Other = "+other);
+      }
+}
