@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        <title>MyGreatVision</title>
+   </head>
+   <body>
+        <h><b>Welecome to new india</b></h>
+        <p><em>India after gaining its independence had focussed on reducing poverty and rapid growth of economy becoming a fifth largest economy and a potential superpower</em></p>
+   </body>
+</html> 
