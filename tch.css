@@ -1,0 +1,17 @@
+span{
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    display: grid;
+    padding: 12px;
+    margin: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2);
+    background-color: cornflowerblue;
+}
+textarea{
+    box-sizing: content-box;
+    width: fit-content;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    margin: 8px;
+    padding: 8px;
+}
