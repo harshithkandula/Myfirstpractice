@@ -1,0 +1,10 @@
+
+public class Batch {
+       String timingType;
+       int noOfParticipants;
+       Batch(){
+    	   
+       }
+       
+       
+}

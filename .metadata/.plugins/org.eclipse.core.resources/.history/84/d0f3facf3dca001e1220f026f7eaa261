@@ -1,0 +1,12 @@
+
+public class Batch {
+       String timingType;
+       int noOfParticipants;
+       Batch(){
+    	   
+       }
+       
+       Batch(String timingType){
+    	   this.timingType = timingType;
+       }
+}

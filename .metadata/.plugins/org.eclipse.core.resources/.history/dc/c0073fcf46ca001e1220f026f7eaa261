@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+
+public class Batch {
+       String timingType;
+       int noOfParticipants;
+       public Batch(){
+    	   
+       }
+       
+       public Batch(String timingType){
+    	   this.timingType = timingType;
+       }
+       
+       Batch bm = new Batch("Morning");
+       Batch be = new Batch("Evening");
+       
+       public void addParticipantsToBatch(Batch b, Participants p) {
+    	  if( b == bm) {
+    		  ArrayList<bm> bmp = new 
+    	  }
+    	   
+    	   
+       }
+}

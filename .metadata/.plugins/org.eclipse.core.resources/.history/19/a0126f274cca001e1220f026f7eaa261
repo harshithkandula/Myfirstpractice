@@ -1,0 +1,10 @@
+
+public class Gym {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Batch b1 = new Batch();
+	}
+
+}

@@ -1,0 +1,82 @@
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Scanner;
+
+public class Participants {
+       
+	String name;
+	String dob;
+	String batch;
+	String profession;
+	String phno ;
+	String address;
+	
+	public Participants(){
+		
+	}
+	 
+	@SuppressWarnings("resource")
+	void participantDetails(Scanner sc) {
+		sc= new Scanner(System.in);
+		System.out.println("Enter the Participant Name");
+		name = sc.next();
+		System.out.println("Enter Date Of Birth");
+		dob = sc.nextLine();
+		System.out.println("Which batch you prefer to join (M/E):");
+		String p = sc.next();
+		if(p == "M") {
+			batch = "Morning";
+		}
+		else {
+			batch = "Evening";
+		}
+		System.out.println("Enter your Occupation");
+		profession = sc.next();
+		
+		System.out.println("Enter your Contact Number");
+		phno = sc.next();
+		
+		System.out.println("Enter your permanent Address");
+		address = sc.next();
+	}
+	
+	public Participants(String name, String dob, String batch, String profession, String phno, String address) {
+		this.name = name;
+		this.dob = dob;
+		this.batch = batch;
+		this.profession = profession;
+		this.phno = phno;
+		this.address = address;
+	}
+
+	
+	ArrayList<Participants> pm = new ArrayList<Participants>();
+    ArrayList<Participants> pe = new ArrayList<Participants>();
+    
+    
+	public String getName() {
+		return name;
+	}
+
+	public String getDob() {
+		return dob;
+	}
+
+	public String getBatch() {
+		return batch;
+	}
+
+	public String getProfession() {
+		return profession;
+	}
+
+	public String getPhno() {
+		return phno;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+	
+	
+}

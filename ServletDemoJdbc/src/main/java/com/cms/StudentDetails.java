@@ -31,7 +31,7 @@ public class StudentDetails extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
-		String stuid = request.getParameter("stid");
+		String stuid = request.getParameter("sid");
 		String fname = request.getParameter("fn");
 		String lname = request.getParameter("ln");
 		String dob = request.getParameter("dob");

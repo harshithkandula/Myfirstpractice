@@ -1,0 +1,55 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Batch {
+       String timingType;
+       int noOfParticipants;
+       
+       ArrayList<Batch> bmp = new ArrayList<Batch>();
+       ArrayList<Batch> bme = new ArrayList<Batch>();
+       public Batch(){
+    	   
+       }
+       
+       public Batch(String timingType){
+    	   this.timingType = timingType;
+       }
+       
+       Batch bm = new Batch("Morning");
+       Batch be = new Batch("Evening");
+       Participants pt =new Participants();
+       
+       public void addParticipantsToBatch(Batch b, Participants p, Scanner sc) {
+    	   
+    	   pt.participantDetails(sc);
+    	   b = new Batch(pt.getBatch()); 
+    	  if( b == bm) {
+    		  //ArrayList<Batch> bmp = new ArrayList<Batch>();
+    		  
+    		  for(Batch bat: bmp) {
+    			  p = new Participants(pt.getName(), pt.getDob(), b.timingType, pt.getProfession(), pt.getPhno(), pt.getAddress());
+    			  bmp.add(bat);
+    		  }
+    	  }
+    	  else {
+    		  //ArrayList<Batch> bme = new ArrayList<Batch>();
+    		  
+    		  for(Batch bat: bme) {
+    			  p = new Participants(pt.getName(), pt.getDob(), b.timingType, pt.getProfession(), pt.getPhno(), pt.getAddress());
+    			  bme.add(bat);
+    		  }
+    	  }
+    	   
+    	   
+       }
+       
+       public void displayDetails(ArrayList<Batch> btc) {
+    	   Scanner sc = new Scanner(System.in);
+    	   System.out.println("Enter the batch timings to know the participant details");
+    	   String btimings = sc.next();
+    	   
+    	   if(btimings.equalsIgnoreCase("Morning")) {
+    		   btc = bmp;
+    	   }
+       }
+}

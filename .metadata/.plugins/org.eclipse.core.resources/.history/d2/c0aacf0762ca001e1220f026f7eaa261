@@ -1,0 +1,67 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Batch {
+       String batch1 = "morning";
+       String batch2 = "Evening";
+       int noOfParticipants;
+       
+       //ArrayList<Batch> bmp = new ArrayList<Batch>();
+       //ArrayList<Batch> bme = new ArrayList<Batch>();
+       public Batch(){
+    	   
+       }
+       
+       public Batch(String timingType){
+    	   //this.timingType = timingType;
+       }
+       
+       Batch bm = new Batch("Morning");
+       Batch be = new Batch("Evening");
+       Participants pt =new Participants();
+       
+       /*public void addParticipantsToBatch(Batch b, Participants p, Scanner sc) {
+    	   boolean addParticipant;
+    	   pt.participantDetails(sc);
+    	   b = new Batch(pt.getBatch()); 
+    	  if( b == bm) {
+    		  //ArrayList<Batch> bmp = new ArrayList<Batch>();
+    		  
+    		  while(Batch bat: bmp) {
+    			  p = new Participants(pt.getName(), pt.getDob(), b.timingType, pt.getProfession(), pt.getPhno(), pt.getAddress());
+    			  bmp.add(p);
+    		  }
+    	  }
+    	  else {
+    		  //ArrayList<Batch> bme = new ArrayList<Batch>();
+    		  
+    		  for(Batch bat: bme) {
+    			  p = new Participants(pt.getName(), pt.getDob(), b.timingType, pt.getProfession(), pt.getPhno(), pt.getAddress());
+    			  bme.add(bat);
+    		  }
+    	  }
+    	   
+    	   
+       }*/
+       
+       public void displayBatchDetails() {
+    	   Scanner sc = new Scanner(System.in);
+    	   Participants p1= new Participants();
+    	   System.out.println("Enter the batch type to know the participant details");
+    	   String btimings = sc.next();
+    	   ArrayList<Participants> p = new ArrayList<Participants>();
+    	   if(btimings.equalsIgnoreCase("Morning")) {
+    		   p = p1.pm;
+    	   }
+    	   else {
+    		   p = p1.pe;
+    	   }
+    	   
+    	   for(Participants b: p) {
+    		   
+    		   System.out.println();
+    		   System.out.println("Name | Dob | Batch | Profession | Phno | Address ");
+    		   System.out.println(b.name+" | "+b.dob+" | "+b.batch+" | "+b.profession+" | "+b.phno+" | "+b.address);
+    	   }
+       }
+}

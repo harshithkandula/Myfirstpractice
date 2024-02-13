@@ -1,0 +1,15 @@
+import java.util.Date;
+
+public class Participants {
+       
+	String name;
+	Date dob;
+	String batch;
+	String profession;
+	String phno ;
+	String address;
+	
+	void participantDetails() {
+		
+	}
+}
