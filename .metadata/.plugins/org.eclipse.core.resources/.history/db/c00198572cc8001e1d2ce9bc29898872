@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+   
+       <form>
+            Age: <input type="text" name="age"><br>
+            
+       </form>
+
+</body>
+</html>

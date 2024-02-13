@@ -1,0 +1,40 @@
+abstract class GPay{
+	 void payFromGoogle(int amt){
+		 System.out.println("[Google Pay]: Amount paid: "+amt);
+	 }
+	abstract void onSuccess(int code, String msg);
+	abstract void onFailure(int code, String msg);
+}
+
+abstract class SamsungPay{
+	abstract void onSuccess(int code, String msg);
+	abstract void onFailure(int code, String msg);
+}
+
+class FoodDeliveryPayment extends GPay{
+
+	@Override
+	void onSuccess(int code, String msg) {
+		// TODO Auto-generated method stub
+		System.out.println("[FDA]: Payment received!! Your Order will be delivered soon");
+		System.out.println("Order ID: "+code);
+		System.out.println(msg);
+	}
+
+	@Override
+	void onFailure(int code, String msg) {
+		// TODO Auto-generated method stub
+		System.out.println("[FDA]: Payment Failed!! some error occured. Please try after sometime");
+		System.out.println("Order ID: "+code);
+		System.out.println(msg);
+	}
+	
+}
+public class FoodDeliveryApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

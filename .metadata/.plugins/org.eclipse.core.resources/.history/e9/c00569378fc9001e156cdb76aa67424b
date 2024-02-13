@@ -1,0 +1,74 @@
+package com.cms.student;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+/**
+ * Servlet implementation class DisplayStudent
+ */
+public class DisplayStudent extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       Connection connection;
+       
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public DisplayStudent() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "Ias@2025");
+			String id = request.getParameter("sid");
+			int sid = Integer.valueOf(id);
+			String querystr = "select * from student where student_id = ?";
+			PreparedStatement ps = connection.prepareStatement(querystr);
+			ps.setInt(1, sid);
+			
+			 ResultSet set = ps.executeQuery();
+			
+			if(set.next()) {
+				int stid = set.getInt(1);
+				String fn = set.getString(2);
+				String ln = set.getString(3);
+				String dob = set.getString(4);
+				String ed = set.getString(5);
+				String c = set.getString(6);
+				
+				String url = "student?id="+sid;
+				//out.println("<a href='"+url+"'>Click to get Student Details</a>");
+				response.sendRedirect(url);
+			}
+			
+			else {
+				out.println("<h5>Student Not Found</h5>");
+				
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+}

@@ -1,0 +1,17 @@
+abstract class GPay{
+	
+	abstract void onSuccess(int code, String msg);
+	abstract void onFailure(int code, String msg);
+}
+abstract class SamsungPay{
+	abstract void onSuccess(int code, String msg);
+	abstract void onFailure(int code, String msg);
+}
+public class FoodDeliveryApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

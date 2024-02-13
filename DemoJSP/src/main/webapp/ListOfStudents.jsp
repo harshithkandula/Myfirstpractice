@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Zumba Academy</title>
+</head>
+<body>
+     <h3>List Of Students</h3>
+     <ol>
+        <li><%=s1 %></li>     
+        <li><%=s2 %></li>
+        <li><%=s3 %></li>
+        <li><%=s4 %></li>
+     </ol>
+     
+      <%!
+        String s1 = "Mahesh";
+        String s2 = "Suresh";
+        String s3 = "Ramesh";
+        String s4 = "Charan";
+      %>
+      
+      <%@ include file="header.html" %>
+</body>
+</html>

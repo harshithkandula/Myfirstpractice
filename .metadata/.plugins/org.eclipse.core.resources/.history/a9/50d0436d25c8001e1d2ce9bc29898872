@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+      <button>
+             <a href="home">Home</a>
+       </button>
+      <button>
+            <a href="ds">Dashboard</a>
+      </button>
+      
+      <h3>HTTP Session tracking objects</h3>
+      
+      <button>
+         <a href="HOME">HOME PAGE</a>
+      </button>
+      
+      <button>
+         <a href="DASHBOARD">Dashboard Page</a>
+      </button>
+      
+      <button>
+           <a href="logout">LogOut</a>
+      </button>
+</body>
+</html>

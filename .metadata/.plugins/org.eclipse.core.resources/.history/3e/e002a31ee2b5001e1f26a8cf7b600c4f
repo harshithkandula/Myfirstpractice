@@ -1,0 +1,23 @@
+interface plan{
+	String getPlanName();
+	int getPlanPrice();
+	void onPurchase(String msg);
+	
+	default void purchase(int amt) {
+		if(amt == getPlanPrice()) {
+			System.out.println("Recharge of Plan of amount Rs."+amt+" is successful");
+			onPurchase("Plan Activated from "+new Date());
+		}
+		else {
+			System.out.println("Plan Purchase failed");
+		}
+	
+}
+public class MobilePlanApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

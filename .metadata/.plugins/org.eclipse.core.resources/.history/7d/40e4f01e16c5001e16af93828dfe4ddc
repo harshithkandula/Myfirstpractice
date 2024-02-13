@@ -1,0 +1,5 @@
+package com.estore.db;
+
+public class Db {
+
+}

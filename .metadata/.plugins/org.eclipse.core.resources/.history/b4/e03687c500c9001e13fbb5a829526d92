@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="java.util.*"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+    <h3>List Of Metropolitan Cities</h3>
+     <%
+       List<String> mycities = new ArrayList<String>();
+       mycities.add("Mumbai");
+       mycities.add("Ahmedabad");
+       mycities.add("Warangal");
+       mycities.add("Bangalore");
+     %>
+     
+     <br>
+     
+     <h3>Excluding some cities from list of metropolitan cities</h3>
+</body>
+</html>

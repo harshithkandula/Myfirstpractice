@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add New Batch</title>
+</head>
+<body>
+      <h2>ENTER DETAILS OF BATCH (Using GET http method)</h2>
+      <form action="addbatch" method="GET">
+       
+           <br> Batch Name: <input type="text" name="batch-name">
+           <br> Password: <input type="password" name="batch-pwd">
+           <br> Instructor Name: <input type="text" name="instructor-name">
+           <br> Start Date: <input type="date" name="start-date">
+           <br> End Date: <input type="date" name="end-date">
+           <br> Batch Type: <input type="radio" name="batch-type" value="Morning Batch">Morning Batch
+           <br> Batch Type: <input type="radio" name="batch-type" value="Evening Batch">Evening Batch
+           <br> Batch Requirements: <input type="checkbox" name="requirements" value="Questionaire">Questionaire submitted
+           <br> Batch Requirements: <input type="checkbox" name="requirements" value="Fitness certificate">Fitness certificate submitted
+           <br><br><input type="submit" value="create-batch">
+       
+      </form>
+      <br>
+      <br>
+      <h2>ENTER DETAILS OF BATCH (Using POST http method)</h2>
+      <form action="addbatch" method="POST">
+       
+           <br> Batch Name: <input type="text" name="batch-name">
+           <br> Password: <input type="password" name="batch-pwd">
+           <br> Instructor Name: <input type="text" name="instructor-name">
+           <br> Start Date: <input type="date" name="start-date">
+           <br> End Date: <input type="date" name="end-date">
+           <br> Batch Type: <input type="radio" name="batch-type" value="Morning Batch">Morning Batch
+           <br> Batch Type: <input type="radio" name="batch-type" value="Evening Batch">Evening Batch
+           <br> Batch Requirements: <input type="checkbox" name="requirements" value="Questionaire">Questionaire submitted
+           <br> Batch Requirements: <input type="checkbox" name="requirements" value="Fitness certificate">Fitness certificate submitted
+           <br><br><input type="submit" value="create-batch">
+       
+      </form>
+</body>
+</html>

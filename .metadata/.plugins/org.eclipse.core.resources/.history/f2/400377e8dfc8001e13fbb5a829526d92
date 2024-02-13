@@ -1,0 +1,61 @@
+package com.cms;
+
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+/**
+ * Servlet implementation class AddNewStudent
+ */
+public class AddNewStudent extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       Connection connection;
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public AddNewStudent() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+    public void init(ServletConfig config) {
+    	//ServletContext sc = config.getServletName();
+    	try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			connection = DriverManager.getConnection(config.getInitParameter("url"), config.getInitParameter("username"), config.getInitParameter("password"));
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    }
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		try {
+			Statement statement = connection.createStatement();
+			String q = String.format("insert into student values(null, '%s', '%s', '%s', '%s', '%s')", request.getParameter("fname"), request.getParameter("lname"), request.getParameter("dob"), request.getParameter("edate"), request.getParameter("courses"));
+			int rowcount = statement.executeUpdate(q);
+			
+			out.printf("<br><h4>Successfully Inserted %s student</h4>", rowcount)
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}
