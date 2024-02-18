@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 import com.gym.model.Batch;
+import com.gym.model.Participant;
 
 public class Db {
 
@@ -38,6 +39,26 @@ public class Db {
 			System.out.println("Something went wrong "+e);
 		}
 		
+		return res;
+	}
+	
+	public int addParticipant(Participant p) {
+		int res = 0;
+		try {
+			String sql = "insert into participant values(null, ?, ?, ?, ?, ?, ?, ?)";
+			ps = connection.prepareStatement(sql);
+			ps.setString(1, p.name);
+			ps.setString(2, p.dob);
+			ps.setString(3, p.gender);
+			ps.setString(4, p.batchname);
+			ps.setString(5, p.profession);
+			ps.setString(6, p.phno);
+			ps.setString(7, p.address);
+			
+			res = ps.executeUpdate();
+		}catch(Exception e) {
+			System.out.println("Something went wrong "+e);
+		}
 		return res;
 	}
 	

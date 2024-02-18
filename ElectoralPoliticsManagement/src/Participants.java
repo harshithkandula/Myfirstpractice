@@ -3,9 +3,11 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Participants {
-       
+    
+	int id;
 	String name;
 	String dob;
+	String gender;
 	String batch;
 	String profession;
 	String phno ;
@@ -15,7 +17,7 @@ public class Participants {
 		
 	}
 	 
-	//@SuppressWarnings("resource")
+	/*@SuppressWarnings("resource")
 	void participantDetails(Scanner sc) {
 		sc= new Scanner(System.in);
 		System.out.println("Enter the Participant Name");
@@ -40,7 +42,7 @@ public class Participants {
 		address = sc.next();
 		
 		sc.close();
-	}
+	}*/
 	
 	public Participants(String name, String dob, String batch, String profession, String phno, String address) {
 		this.name = name;
@@ -52,23 +54,32 @@ public class Participants {
 	}
 
 	
-	ArrayList<Participants> pm = new ArrayList<Participants>();
-    ArrayList<Participants> pe = new ArrayList<Participants>();
+	
     
-    Batch b = new Batch();
     
-    public void addParticipantsToBatch() {
+    
+    
+    
+    /*public  void addParticipantsToBatch(Participants p) {
     	
     	
-    	Participants p = new Participants(name, dob, batch, profession, phno, address);
+    	 p = new Participants();
+    	//p.name = name;
+    	//p.dob = dob;
+    	//p.batch = batch;
+    	//p.profession = profession;
+    	//p.phno = phno;
+    	//p.address = address;
     	
-    	if(batch == b.batch1) {
-    		pm.add(p);
+    	if(p.batch == b.batch1) {
+    		
+				pm.add(p);
+			
     	}
     	else {
     		pe.add(p);
     	}
-    }
+    }*/
     
     
 	public String getName() {

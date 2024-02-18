@@ -8,6 +8,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import com.gym.db.Db;
+import com.gym.model.Participant;
+
 /**
  * Servlet implementation class Register
  */
@@ -30,18 +33,28 @@ public class Register extends HttpServlet {
 		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
+		Participant p = new Participant();
 		
-		String name = request.getParameter("pname");
-		String dob = request.getParameter("dob");
-		String gender = request.getParameter("gender");
-		String batch = request.getParameter("bname");
-		String profession = request.getParameter("job");
-		String phno = request.getParameter("phno");
-		String address = request.getParameter("addr");
+		p.name = request.getParameter("pname");
+		p.dob = request.getParameter("dob");
+		p.gender = request.getParameter("gender");
+		p.batchname = request.getParameter("bname");
+		p.profession = request.getParameter("job");
+		p.phno = request.getParameter("phno");
+		p.address = request.getParameter("addr");
 		
 		
-		String htmlResponse = "Thank you "+name+" for joining Zumba classes in our gym";
-		out.println(htmlResponse);
+		Db db = new Db();
+		int res = db.addParticipant(p);
+		
+		if(res > 0) {
+			String htmlResponse = "Thank you "+p.name+" for joining Zumba classes in our gym";
+			out.println(htmlResponse);
+		}
+		else {
+			out.println("<h1>Participant not added. Please try Again</h1>");
+		}
+		
 		
 	}
 

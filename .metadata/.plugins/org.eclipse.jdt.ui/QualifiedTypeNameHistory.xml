@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
-    <fullyQualifiedTypeName name="java.util.concurrent.ExecutorService"/>
-    <fullyQualifiedTypeName name="java.util.concurrent.Future"/>
-    <fullyQualifiedTypeName name="java.net.http.HttpClient"/>
-    <fullyQualifiedTypeName name="java.net.http.HttpClient.Version"/>
-    <fullyQualifiedTypeName name="java.time.Duration"/>
-    <fullyQualifiedTypeName name="java.net.http.HttpRequest"/>
     <fullyQualifiedTypeName name="java.net.URI"/>
     <fullyQualifiedTypeName name="java.net.http.HttpRequest.BodyPublisher"/>
     <fullyQualifiedTypeName name="java.net.http.HttpRequest.BodyPublishers"/>
@@ -35,16 +28,13 @@
     <fullyQualifiedTypeName name="com.mysql.cj.jdbc.Driver"/>
     <fullyQualifiedTypeName name="com.skyhigh.EasyFrieght.model.User"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="com.skyhigh.EasyFrieght.db.Db"/>
     <fullyQualifiedTypeName name="com.skyhigh.EasyFrieght.db.DbPs"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="org.apache.catalina.tribes.util.Arrays"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.Cookie"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="jakarta.servlet.RequestDispatcher"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.estore.model.Product"/>
     <fullyQualifiedTypeName name="com.estore.db.Db"/>
     <fullyQualifiedTypeName name="java.util.Enumeration"/>
@@ -53,11 +43,21 @@
     <fullyQualifiedTypeName name="jakarta.servlet.ServletRequest"/>
     <fullyQualifiedTypeName name="jakarta.servlet.FilterChain"/>
     <fullyQualifiedTypeName name="jakarta.servlet.ServletConfig"/>
-    <fullyQualifiedTypeName name="java.sql.Connection"/>
-    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
-    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="jakarta.servlet.ServletContext"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="Gym"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="com.gym.model.Batch"/>
+    <fullyQualifiedTypeName name="com.gym.db.Db"/>
+    <fullyQualifiedTypeName name="com.gym.model.Participant"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.jsp.tagext.SimpleTagSupport"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.jsp.JspException"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
 </qualifiedTypeNameHistroy>
