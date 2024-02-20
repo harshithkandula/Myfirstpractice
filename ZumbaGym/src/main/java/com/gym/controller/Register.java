@@ -1,5 +1,6 @@
 package com.gym.controller;
 
+import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -7,6 +8,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import com.gym.db.Db;
 import com.gym.model.Participant;
@@ -30,6 +36,13 @@ public class Register extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		Connection connection;
+		PreparedStatement ps;
+		
+		ServletConfig config = getServletConfig();
+		String uname = config.getInitParameter("username");
+		String pwd = config.getInitParameter("password");
+		String url = config.getInitParameter("driverlink");
 		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
@@ -39,6 +52,23 @@ public class Register extends HttpServlet {
 		p.dob = request.getParameter("dob");
 		p.gender = request.getParameter("gender");
 		p.batchname = request.getParameter("bname");
+		
+		/*String batch_name = request.getParameter("bname");
+		if(batch_name == "morning") {
+			String sql = "select name from batch where where id ='ZBM'";
+		    try {
+				connection = DriverManager.getConnection(url, uname, pwd);
+				ps = connection.prepareStatement(sql);
+				ResultSet res = ps.executeQuery();
+				while(res.next()) {
+					p.batchname = res.getString(1);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}*/
 		p.profession = request.getParameter("job");
 		p.phno = request.getParameter("phno");
 		p.address = request.getParameter("addr");

@@ -5,6 +5,18 @@
     <display-name>Register</display-name>
     <servlet-name>Register</servlet-name>
     <servlet-class>com.gym.controller.Register</servlet-class>
+    <init-param>
+          <param-name>username</param-name>
+          <param-value>root</param-value>
+    </init-param>
+    <init-param>
+          <param-name>password</param-name>
+          <param-value>Ias@2025</param-value>
+    </init-param>
+    <init-param>
+          <param-name>driverlink</param-name>
+          <param-value>jdbc:mysql://localhost/icon</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>Register</servlet-name>

@@ -3,6 +3,9 @@ package com.gym.db;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.gym.model.Batch;
 import com.gym.model.Participant;
@@ -60,6 +63,27 @@ public class Db {
 			System.out.println("Something went wrong "+e);
 		}
 		return res;
+	}
+	
+	public ArrayList<String> fetchAllBatches(){
+		ArrayList<String> b = new ArrayList<String>();
+		
+		String sqlcmd = "select name from batch";
+		try {
+			ps=connection.prepareStatement(sqlcmd);
+			ResultSet set = ps.executeQuery();
+			
+			while(set.next()) {
+				//Batch b1 = new Batch();
+				String batchName = set.getString(1);
+				
+				b.add(batchName);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return b;
 	}
 	
 	public void connection() {
