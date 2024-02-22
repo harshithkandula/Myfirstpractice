@@ -2,7 +2,7 @@ package com.gym.model;
 
 public class Participant {
 
-	int id;
+	public int id;
 	public String name;
 	public String dob;
 	public String gender;
