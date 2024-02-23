@@ -128,4 +128,15 @@
     <url-pattern>/SearchParticipantById</url-pattern>
     <url-pattern>/spbi</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ParticipantsDetails</display-name>
+    <servlet-name>ParticipantsDetails</servlet-name>
+    <servlet-class>com.gym.controller.ParticipantsDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ParticipantsDetails</servlet-name>
+    <url-pattern>/ParticipantsDetails</url-pattern>
+    <url-pattern>/participantdetails</url-pattern>
+  </servlet-mapping>
 </web-app>

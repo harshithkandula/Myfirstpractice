@@ -34,8 +34,10 @@ public class SearchParticipantById extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		String participantid = request.getParameter("pid");
+		int p_id = Integer.parseInt(participantid);
+		
 		Db d = new Db();
-		ArrayList<Participant> pdbi = d.displayParticipantById(0);
+		ArrayList<Participant> pdbi = d.displayParticipantById(p_id);
 		StringBuffer b = new StringBuffer();
 		if(pdbi.size()>0) {
 			b.append("<table>");
@@ -64,6 +66,7 @@ public class SearchParticipantById extends HttpServlet {
 			b.append("</table>");
 		}
 		out.println(b.toString());
+		
 		out.close();
 	}
 

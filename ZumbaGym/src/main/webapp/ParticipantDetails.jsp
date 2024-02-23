@@ -1,0 +1,46 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.gym.model.Participant"%>
+<%@page import="com.gym.db.Db"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Participants Details</title>
+</head>
+<body>
+     <%
+        Db d = new Db();
+       ArrayList<Participant> p =d.displayAllParticipantDetails();
+       StringBuffer b = new StringBuffer();
+       if(p.size()>0){
+    	   %>
+    	   <table>
+    	      <tr>
+    	         <th>ID</th>
+    	         <th>NAME</th>
+    	         <th>SHOW DETAILS</th>
+    	      </tr>
+    	      <% 
+    	         for(Participant p1: p){
+    	        	 %>
+    	        	 <tr>
+    	        	    <td><%=p1.id %></td>
+    	        	    <td><%=p1.name %></td>
+    	        	    <td><a href="participantdetails?id=<%=p1.id%>">Info</a></td>
+    	        	 </tr>
+    	        	 <% 
+    	         }
+    	      %>
+    	   </table>
+    	   <% 
+       }
+       else{
+    	   %>
+    	   <h3>No Participants</h3>
+    	   <% 
+       }
+     %>
+</body>
+</html>
