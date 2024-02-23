@@ -74,4 +74,14 @@
     <url-pattern>/DisplayParticipantDetails</url-pattern>
     <url-pattern>/dpd</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DisplayParticipantDetails_v2</display-name>
+    <servlet-name>DisplayParticipantDetails_v2</servlet-name>
+    <servlet-class>com.gym.controller.DisplayParticipantDetails_v2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>DisplayParticipantDetails_v2</servlet-name>
+     <url-pattern>/dpv</url-pattern>
+  </servlet-mapping>
 </web-app>

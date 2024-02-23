@@ -18,25 +18,29 @@
                <option value="participant">Participant</option>
           </select>
           <script>
-              String stype = document.getElementById("sb");
+              String stype = document.getElementById("sb").value;
           </script>
-          <c:if test="${stype.equals('participant')}">
+        <c:choose>
+           <c:when test="${stype.equals('participant')}">
                   <select  name="searchtypeparticipant" id="stp">
                         <option value="id">ID</option>
                         <option value="name">NAME</option>
                   </select>
-                  <script>String pstype = document.getElementById("stp");</script>
-                  <c:if test="${pstype.equals('id')}">
-                       <label>ID</label>
-                       <input type="number" name="pid">
-                  </c:if>
-                  <c:if test="${pstype.equals('name')}">
-                       <label>NAME</label>
-                       <input type="text" name="pname">
-                  </c:if>
-          </c:if>
+                  <script>String pstype = document.getElementById("stp").value;</script>
+                  <c:choose>
+                       <c:when test="${pstype.equals('id')}">
+                              <label>ID</label>
+                              <input type="number" name="pid">
+                       </c:when>
+                       <c:when test="${pstype.equals('name')}">
+                              <label>NAME</label>
+                              <input type="text" name="pname">
+                       </c:when>  
+                  </c:choose>
+                  
+          </c:when>
           
-          <c:if test="${stype.equals('batch')}">
+          <c:when test="${stype.equals('batch')}">
                <select name="stb">
                    <option value="">--Select Batch--</option>
                    <%
@@ -49,7 +53,9 @@
                       }
                    %>
                </select>
-          </c:if>
+            </c:when>
+        </c:choose>
+          
         
           <input type="submit" value="search">
       </form>
