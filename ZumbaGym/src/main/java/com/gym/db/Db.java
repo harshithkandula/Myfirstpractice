@@ -197,6 +197,60 @@ public class Db {
 		return dpp;
 	}
 	
+	public ArrayList<Participant> displayParticipantByName(String name){
+		ArrayList<Participant> pdn = new ArrayList<Participant>();
+		String sqlcmd = "select * from participant where  participant_name=?";
+		try {
+			ps = connection.prepareStatement(sqlcmd);
+			ps.setString(1, name);
+			ResultSet set = ps.executeQuery();
+			while(set.next()) {
+				Participant p = new Participant();
+				p.id = set.getInt(1);
+				p.name = set.getString(2);
+				p.dob = set.getString(3);
+				p.gender = set.getString(4);
+				p.batchname = set.getString(5);
+				p.profession = set.getString(6);
+				p.phno = set.getString(7);
+				p.address = set.getString(8);
+				
+				pdn.add(p);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return pdn;
+	}
+	
+	public ArrayList<Participant> displayParticipantById(int id){
+		ArrayList<Participant> pdi = new ArrayList<Participant>();
+		String sqlcmd = "select * from participant where id=?";
+		try {
+			ps = connection.prepareStatement(sqlcmd);
+			ps.setInt(1, id);
+			ResultSet set = ps.executeQuery();
+			while(set.next()) {
+				Participant p = new Participant();
+				p.id = set.getInt(1);
+				p.name = set.getString(2);
+				p.dob = set.getString(3);
+				p.gender = set.getString(4);
+				p.batchname = set.getString(5);
+				p.profession = set.getString(6);
+				p.phno = set.getString(7);
+				p.address = set.getString(8);
+				
+				pdi.add(p);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return pdi;
+	}
+	
 	public ArrayList<Batch> fetchAllBatchesDetails(){
 		ArrayList<Batch> bh = new ArrayList<Batch>();
 		String sqlcmd = "select * from batch";

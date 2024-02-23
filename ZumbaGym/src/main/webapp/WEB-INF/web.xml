@@ -81,7 +81,51 @@
     <servlet-class>com.gym.controller.DisplayParticipantDetails_v2</servlet-class>
   </servlet>
   <servlet-mapping>
-     <servlet-name>DisplayParticipantDetails_v2</servlet-name>
-     <url-pattern>/dpv</url-pattern>
+    <servlet-name>DisplayParticipantDetails_v2</servlet-name>
+    <url-pattern>/dpv</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DisplayAllParticipants</display-name>
+    <servlet-name>DisplayAllParticipants</servlet-name>
+    <servlet-class>com.gym.controller.DisplayAllParticipants</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DisplayAllParticipants</servlet-name>
+    <url-pattern>/DisplayAllParticipants</url-pattern>
+    <url-pattern>/dap</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DisplayParticipantByBatch</display-name>
+    <servlet-name>DisplayParticipantByBatch</servlet-name>
+    <servlet-class>com.gym.controller.DisplayParticipantByBatch</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DisplayParticipantByBatch</servlet-name>
+    <url-pattern>/DisplayParticipantByBatch</url-pattern>
+    <url-pattern>/dppb</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchParticipantByName</display-name>
+    <servlet-name>SearchParticipantByName</servlet-name>
+    <servlet-class>com.gym.controller.SearchParticipantByName</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchParticipantByName</servlet-name>
+    <url-pattern>/SearchParticipantByName</url-pattern>
+    <url-pattern>/spbn</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchParticipantById</display-name>
+    <servlet-name>SearchParticipantById</servlet-name>
+    <servlet-class>com.gym.controller.SearchParticipantById</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchParticipantById</servlet-name>
+    <url-pattern>/SearchParticipantById</url-pattern>
+    <url-pattern>/spbi</url-pattern>
   </servlet-mapping>
 </web-app>
