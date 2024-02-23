@@ -139,6 +139,64 @@ public class Db {
 		return pb;
 	}
 	
+	public ArrayList<Participant> displayParticipantByParameters(String p, String val){
+		ArrayList<Participant> dpp = new ArrayList<Participant>();
+		String sqlcmd1 = "String * from Participant where participant_name=?";
+		String sqlcmd2 = "select * from Participant where id = ?";
+		int id;
+		String name;
+		if(p.equalsIgnoreCase("id")) {
+			try {
+				ps = connection.prepareStatement(sqlcmd2);
+				 id = Integer.parseInt(val);
+				ps.setInt(1, id);
+				ResultSet set = ps.executeQuery();
+				while(set.next()) {
+					Participant p1 = new Participant();
+					p1.id = set.getInt(1);
+					p1.name = set.getString(2);
+					p1.dob = set.getString(3);
+					p1.gender = set.getString(4);
+					p1.batchname = set.getString(5);
+					p1.profession = set.getString(6);
+					p1.phno = set.getString(7);
+					p1.address = set.getString(8);
+					
+					dpp.add(p1);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		else {
+			name = val;
+			try {
+				ps = connection.prepareStatement(sqlcmd1);
+				ps.setString(1, name);
+				ResultSet set = ps.executeQuery();
+				while(set.next()) {
+					Participant p2 = new Participant();
+					p2.id = set.getInt(1);
+					p2.name = set.getString(2);
+					p2.dob = set.getString(3);
+					p2.gender = set.getString(4);
+					p2.batchname = set.getString(5);
+					p2.profession = set.getString(6);
+					p2.phno = set.getString(7);
+					p2.address = set.getString(8);
+					
+					dpp.add(p2);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		return dpp;
+	}
+	
 	public ArrayList<Batch> fetchAllBatchesDetails(){
 		ArrayList<Batch> bh = new ArrayList<Batch>();
 		String sqlcmd = "select * from batch";

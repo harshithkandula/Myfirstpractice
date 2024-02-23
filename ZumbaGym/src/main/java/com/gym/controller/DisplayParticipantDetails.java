@@ -34,37 +34,80 @@ public class DisplayParticipantDetails extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-	    Batch b = new Batch();
-	    String batch_name = request.getParameter("bname");
-	    Db d = new Db();
-	    
-	    ArrayList<Participant> pbb = d.displayParticipantByBatch(batch_name);
-	    StringBuffer bf = new StringBuffer();
-	    out.println("<h3>Participant Details in "+batch_name+"</h3>");
-	    if(pbb.size()>0) {
-	    	bf.append("<table>");
-	    	bf.append("<tr>");
-	    	bf.append("<th>ID</th>");
-	    	bf.append("<th>NAME</th>");
-	    	bf.append("<th>DATE OF BIRTH</th>");
-	    	bf.append("<th>GENDER</th>");
-	    	bf.append("<th>PROFESSION</th>");
-	    	bf.append("<th>PHONE NUMBER</th>");
-	    	bf.append("<th>ADDRESS</th>");
-	    	bf.append("</tr>");
-	    	for(Participant p: pbb) {
+		StringBuffer bf = new StringBuffer();
+		String sortbytype = request.getParameter("sortby");
+		ArrayList<Participant> pd = new ArrayList<Participant>();
+		Db dp = new Db();
+		
+		
+		if(sortbytype.equalsIgnoreCase("participant")) {
+			String participantSearchType = request.getParameter("searchtypeparticipant");
+			if(participantSearchType.equalsIgnoreCase("id")) {
+				String participantId = request.getParameter("pid");
+				pd = dp.displayParticipantByParameters("id", participantId);
+			}
+			else {
+				String participantName = request.getParameter("pname");
+				pd = dp.displayParticipantByParameters("name", participantName);
+			}
+			
+			if(pd.size()>0) {
+		    	bf.append("<table>");
 		    	bf.append("<tr>");
-		    	bf.append("<td>"+p.id+"</td>");
-		    	bf.append("<td>"+p.name+"</td>");
-		    	bf.append("<td>"+p.dob+"</td>");
-		    	bf.append("<td>"+p.gender+"</td>");
-		    	bf.append("<td>"+p.profession+"</td>");
-		    	bf.append("<td>"+p.phno+"</td>");
-		    	bf.append("<td>"+p.address+"</td>");
+		    	bf.append("<th>ID</th>");
+		    	bf.append("<th>NAME</th>");
+		    	bf.append("<th>DATE OF BIRTH</th>");
+		    	bf.append("<th>GENDER</th>");
+		    	bf.append("<th>PROFESSION</th>");
+		    	bf.append("<th>PHONE NUMBER</th>");
+		    	bf.append("<th>ADDRESS</th>");
 		    	bf.append("</tr>");
-	    	}
-	    	bf.append("</table>");
-	    }
+		    	for(Participant p: pd) {
+			    	bf.append("<tr>");
+			    	bf.append("<td>"+p.id+"</td>");
+			    	bf.append("<td>"+p.name+"</td>");
+			    	bf.append("<td>"+p.dob+"</td>");
+			    	bf.append("<td>"+p.gender+"</td>");
+			    	bf.append("<td>"+p.profession+"</td>");
+			    	bf.append("<td>"+p.phno+"</td>");
+			    	bf.append("<td>"+p.address+"</td>");
+			    	bf.append("</tr>");
+		    	}
+		    	bf.append("</table>");
+		    }
+		}
+		else {
+			String batch_name = request.getParameter("stb");
+			pd = dp.displayParticipantByBatch(batch_name);
+			
+		    out.println("<h3>Participant Details in "+batch_name+"</h3>");
+		    if(pd.size()>0) {
+		    	bf.append("<table>");
+		    	bf.append("<tr>");
+		    	bf.append("<th>ID</th>");
+		    	bf.append("<th>NAME</th>");
+		    	bf.append("<th>DATE OF BIRTH</th>");
+		    	bf.append("<th>GENDER</th>");
+		    	bf.append("<th>PROFESSION</th>");
+		    	bf.append("<th>PHONE NUMBER</th>");
+		    	bf.append("<th>ADDRESS</th>");
+		    	bf.append("</tr>");
+		    	for(Participant p: pd) {
+			    	bf.append("<tr>");
+			    	bf.append("<td>"+p.id+"</td>");
+			    	bf.append("<td>"+p.name+"</td>");
+			    	bf.append("<td>"+p.dob+"</td>");
+			    	bf.append("<td>"+p.gender+"</td>");
+			    	bf.append("<td>"+p.profession+"</td>");
+			    	bf.append("<td>"+p.phno+"</td>");
+			    	bf.append("<td>"+p.address+"</td>");
+			    	bf.append("</tr>");
+		    	}
+		    	bf.append("</table>");
+		    }
+		}
+		
+	    
 	    
 	}
 
