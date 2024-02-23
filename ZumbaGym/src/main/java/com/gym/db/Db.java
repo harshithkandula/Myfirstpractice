@@ -11,7 +11,7 @@ import com.gym.model.Batch;
 import com.gym.model.Participant;
 
 public class Db {
-
+    
 	Connection connection;
 	PreparedStatement ps;
 	
@@ -299,6 +299,20 @@ public class Db {
 			e.printStackTrace();
 		}
 		return pd;
+	}
+	
+	public int deleteParticipant(int id) {
+		String sqlcmd = "Delete from participant where id = ?";
+		int res = 0;
+		try {
+			ps = connection.prepareStatement(sqlcmd);
+			ps.setInt(1, id);
+			res = ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return res;
 	}
 	public void connection() {
 		try {
