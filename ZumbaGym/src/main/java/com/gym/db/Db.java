@@ -301,6 +301,27 @@ public class Db {
 		return pd;
 	}
 	
+	public int updateParticipant(int id, String name, String dob, String gender, String batch, String profession, String phno, String addr) {
+		String sqlcmd = "update participant set participant_name = ?, date_of_birth = ?, gender = ?, name = ?, profession=?, phone_number=?, address=? where id=?";
+		int res=0;
+		try {
+			ps = connection.prepareStatement(sqlcmd);
+			ps.setString(1, name);
+			ps.setString(2, dob);
+			ps.setString(3, gender);
+			ps.setString(4, batch);
+			ps.setString(5, profession);
+			ps.setString(6, phno);
+			ps.setString(7, addr);
+			ps.setInt(8, id);
+			res = ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return res;
+	}
+	
 	public int deleteParticipant(int id) {
 		String sqlcmd = "Delete from participant where id = ?";
 		int res = 0;

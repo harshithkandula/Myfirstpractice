@@ -150,4 +150,26 @@
     <url-pattern>/DeleteParticipant</url-pattern>
     <url-pattern>/deleteparticipant</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditParticipant</display-name>
+    <servlet-name>EditParticipant</servlet-name>
+    <servlet-class>com.gym.controller.EditParticipant</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditParticipant</servlet-name>
+    <url-pattern>/EditParticipant</url-pattern>
+    <url-pattern>/editparticipant</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateParticipant</display-name>
+    <servlet-name>UpdateParticipant</servlet-name>
+    <servlet-class>com.gym.controller.UpdateParticipant</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateParticipant</servlet-name>
+    <url-pattern>/UpdateParticipant</url-pattern>
+    <url-pattern>/updateparticipant</url-pattern>
+  </servlet-mapping>
 </web-app>

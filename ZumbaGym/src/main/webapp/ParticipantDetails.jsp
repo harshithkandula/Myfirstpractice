@@ -21,6 +21,7 @@
     	         <th>ID</th>
     	         <th>NAME</th>
     	         <th>SHOW DETAILS</th>
+    	         <th>EDIT</th>
     	         <th>DELETE</th>
     	      </tr>
     	      <% 
@@ -30,6 +31,7 @@
     	        	    <td><%=p1.id %></td>
     	        	    <td><%=p1.name %></td>
     	        	    <td><a href="participantdetails?id=<%=p1.id%>">Info</a></td>
+    	        	    <td><a href="editparticipant?id=<%=p1.id%>">Click Here</a></td>
     	        	    <td><a href="deleteparticipant?id=<%=p1.id%>">ClickHere</a></td>
     	        	 </tr>
     	        	 <% 
