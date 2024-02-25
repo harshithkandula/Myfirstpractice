@@ -322,12 +322,44 @@ public class Db {
 		return res;
 	}
 	
+	public int updateBatch(String id, String name, String timings, int stgth, String sd) {
+		String sqlcmd = "update batch set id = ? , timings = ?, strength = ?, start_date = ? where name = ?";
+		int res = 0;
+		try {
+			ps = connection.prepareStatement(sqlcmd);
+			ps.setString(1, id);
+			ps.setString(2, timings);
+			ps.setInt(3, stgth);
+			ps.setString(4, sd);
+			ps.setString(5, name);
+			res = ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return res;
+	}
+	
 	public int deleteParticipant(int id) {
 		String sqlcmd = "Delete from participant where id = ?";
 		int res = 0;
 		try {
 			ps = connection.prepareStatement(sqlcmd);
 			ps.setInt(1, id);
+			res = ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return res;
+	}
+	
+	public int deleteBatch(String bn) {
+		String sqlcmd = "Delete from batch where name = ?";
+		int res = 0;
+		try {
+			ps = connection.prepareStatement(sqlcmd);
+			ps.setString(1, bn);
 			res = ps.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
