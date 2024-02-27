@@ -42,7 +42,6 @@ INDEX VERSION 1.134+E:\Simplilearn\Backend_fsd\Java\.metadata\.plugins\org.eclip
 1110613945.index
 527920024.index
 3641147775.index
-4263238800.index
 3973405585.index
 4287612978.index
 683232073.index

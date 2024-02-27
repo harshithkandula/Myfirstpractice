@@ -49,8 +49,6 @@
     <fullyQualifiedTypeName name="jakarta.servlet.ServletConfig"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="com.gym.model.Participant"/>
-    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
-    <fullyQualifiedTypeName name="com.gym.db.Db"/>
     <fullyQualifiedTypeName name="com.gym.model.Batch"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.mongodb.client.MongoClient"/>
@@ -60,4 +58,6 @@
     <fullyQualifiedTypeName name="com.mongodb.client.MongoCollection"/>
     <fullyQualifiedTypeName name="com.mongodb.client.FindIterable"/>
     <fullyQualifiedTypeName name="com.mongodb.client.model.Filters"/>
+    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="com.gym.db.Db"/>
 </qualifiedTypeNameHistroy>
