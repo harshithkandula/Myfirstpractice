@@ -2,9 +2,15 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@ include file="Header.html" %>
 <!DOCTYPE html>
 <html>
 <head>
+   <style type="text/css">
+         *{
+                background-color:burlywood;
+            }
+   </style>
 <meta charset="ISO-8859-1">
 <title>SearchParticipantsByBatch</title>
 </head>

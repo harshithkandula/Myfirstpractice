@@ -3,3 +3,9 @@ E:\Simplilearn\Backend_fsd\Java\.metadata\.plugins\org.eclipse.jst.jsp.core\jsps
 \DemoJSP\src\main\java
 E:\Simplilearn\Backend_fsd\Java\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1800702404.index
 \JstlTagLibDemo\src\main\java
+E:\Simplilearn\Backend_fsd\Java\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\10502330.index
+\mymvnwebapp\src\main\resources
+E:\Simplilearn\Backend_fsd\Java\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1433700230.index
+\ZumbaGym\src\main\java
+E:\Simplilearn\Backend_fsd\Java\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\947288405.index
+\JspStuff\src\main\java

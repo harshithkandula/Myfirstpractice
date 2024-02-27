@@ -35,7 +35,17 @@ public class SearchParticipantById extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String participantid = request.getParameter("pid");
 		int p_id = Integer.parseInt(participantid);
-		
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<style>");
+		out.println("*{");
+		out.println("background-color:burlywood;");
+		out.println("}");
+		out.println("table{");
+		out.println("border: 1px solid black;");
+		out.println("}");
+		out.println("</style>");
+		out.println("</head>");
 		Db d = new Db();
 		ArrayList<Participant> pdbi = d.displayParticipantById(p_id);
 		StringBuffer b = new StringBuffer();
@@ -66,7 +76,7 @@ public class SearchParticipantById extends HttpServlet {
 			b.append("</table>");
 		}
 		out.println(b.toString());
-		
+		out.println("</html>");
 		out.close();
 	}
 

@@ -3,9 +3,15 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ include file="Header.html" %>
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+     *{
+                background-color:burlywood;
+            }
+</style>
 <meta charset="ISO-8859-1">
 <title>Add Participant</title>
 </head>
@@ -43,7 +49,7 @@
          <label>Contact Number</label>
          <input type="text" name="phno"><br>
          <label>Address</label>
-         <textarea name="addr" rows="60" cols="40"></textarea>
+         <textarea name="addr" rows="15" cols="40"></textarea>
          
          <br>
          <br>

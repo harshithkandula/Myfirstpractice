@@ -35,6 +35,17 @@ public class DisplayParticipantByBatch extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String batchName = request.getParameter("b_name");
 		Db d = new Db();
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<style>");
+		out.println("*{");
+		out.println("background-color:burlywood;");
+		out.println("}");
+		out.println("table{");
+		out.println("border: 1px solid black;");
+		out.println("}");
+		out.println("</style>");
+		out.println("</head>");
 		ArrayList<Participant> pdb = d.displayParticipantByBatch(batchName);
 		
 		StringBuffer buff = new StringBuffer();
@@ -68,6 +79,7 @@ public class DisplayParticipantByBatch extends HttpServlet {
 			out.println("<h3>No Participants registered in "+batchName+"</h3>");
 		}
 		out.println(buff.toString());
+		out.println("</html>");
 		out.close();
 	}
 

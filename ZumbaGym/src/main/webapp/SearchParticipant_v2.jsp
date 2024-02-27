@@ -12,30 +12,18 @@
        <%!String searchtype; 
           String participantvalue;
        %>
-       <form action="dpv" method="post">
+       <form action="SearchParticipant_v2.jsp" method="post">
            <select name="sortby" id="sb">
                 <option value="batch">Batch</option>
                 <option value="pp">Participant ID/Name</option>
            </select>
-           <script>
-                searchtype = document.getElementById("sb").value;
-           </script>
+           
            <%
-        
-             if(searchtype.equalsIgnoreCase("batch")){
+              String stype = request.getParameter("sortby");
+             if(stype.equalsIgnoreCase("batch")){
             	 %>
-            	 <select name="bn">
-            	       <option>--select batch--</option>
-            	       <%
-            	         Db d = new Db();
-            	         ArrayList<String> bl = d.fetchAllBatches();
-            	         for(String b: bl){
-            	        	 %>
-            	        	 <option value=<%=b %>><%=b %></option>
-            	        	 <%
-            	         }
-            	       %>
-            	 </select>
+            	 <%@ include file="SearchParticipantsByBatch.jsp"%>
+            	 
             	 <% 
              }
              else {
@@ -45,24 +33,26 @@
             	      <option value="name">NAME</option>
             	      <option value="id">ID</option>
             	 </select>
-            	 <script type="text/javascript">
-            	 participantvalue = document.getElementById("pv").value;
-            	 </script>
+            	 
             	 <% 
-            	 if(participantvalue.equalsIgnoreCase("name")){
+            	 String pd = request.getParameter("participantdetails");
+            	 if(pd.equalsIgnoreCase("name")){
             		 %>
-            		 <label>NAME</label>
-            		 <input type="text" name="pname" placeholder="Enter participant Name">
+            		 <%@ include file="SearchParticipantByName.html" %>
             		 <%
             	 }
             	 else{
             		 %>
-            		 <label>ID</label>
-            		 <input type="number" name="pid" placeholder="Enter Participant Id">
+            		 <%@ include file="SearchParticipantById.jsp" %>
             		 <% 
             	 }
              }
            %>
+           <input type="submit" value="search">
        </form>
+       
+       <%
+        
+       %>
 </body>
 </html>

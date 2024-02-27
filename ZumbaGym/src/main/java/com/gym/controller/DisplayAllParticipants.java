@@ -35,6 +35,17 @@ public class DisplayAllParticipants extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		Db b = new Db();
 		StringBuffer buffer = new StringBuffer();
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<style>");
+		out.println("*{");
+		out.println("background-color:burlywood;");
+		out.println("}");
+		out.println("table{");
+		out.println("border: 1px solid black;");
+		out.println("}");
+		out.println("</style>");
+		out.println("</head>");
 		out.println("<h3>Participant Details</h3>");
 		ArrayList<Participant> pd = b.displayAllParticipantDetails();
 		if(pd.size()>0) {
@@ -68,6 +79,7 @@ public class DisplayAllParticipants extends HttpServlet {
 		}
 		
 		out.println(buffer.toString());
+		out.println("</html>");
 		out.close();
 	}
 

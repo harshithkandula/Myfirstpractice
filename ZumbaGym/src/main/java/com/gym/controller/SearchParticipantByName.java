@@ -36,6 +36,17 @@ public class SearchParticipantByName extends HttpServlet {
 		
 		String p_name = request.getParameter("pname");
 		Db d = new Db();
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<style>");
+		out.println("*{");
+		out.println("background-color:burlywood;");
+		out.println("}");
+		out.println("table{");
+		out.println("border: 1px solid black;");
+		out.println("}");
+		out.println("</style>");
+		out.println("</head>");
 		ArrayList<Participant> pdbn = d.displayParticipantByName(p_name);
 		StringBuffer b = new StringBuffer();
 		if(pdbn.size()>0) {
@@ -65,6 +76,7 @@ public class SearchParticipantByName extends HttpServlet {
 			b.append("</table>");
 		}
 		out.println(b.toString());
+		out.println("</html>");
 		out.close();
 	}
 

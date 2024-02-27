@@ -34,7 +34,13 @@ public class EditBatch extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		Db d = new Db();
-		
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<style>");
+		out.println("*{");
+		out.println("background-color:burlywood;");
+		out.println("}");
+		out.println("</style>");
 		String batchName = request.getParameter("batchname");
 		
 		
@@ -42,9 +48,9 @@ public class EditBatch extends HttpServlet {
 		
 		out.println("<h3>Edit Participant</h3>");
 		for(Batch i: bd) {
-			out.println("<form action='' method='post'>");
+			out.println("<form action='updatebatch' method='post'>");
 			out.println("<label>Batch ID</label>");
-			out.println("<input type='hidden' name='bid' value='"+i.batchId+"'>");
+			out.println("<input type='text' name='bid' value='"+i.batchId+"'>");
 			out.println("<label>Batch Name</label>");
 			out.println("<input type='text' name='bname' value='"+i.batchName+"'>");
 			out.println("<label>Timings</label>");
@@ -57,7 +63,7 @@ public class EditBatch extends HttpServlet {
 			out.println("</form>");
 		}
 		
-		String id = request.getParameter("bid");
+		/*String id = request.getParameter("bid");
 		String batchTime = request.getParameter("btiming");
 		String batchSth = request.getParameter("strength");
 		int bsth = Integer.parseInt(batchSth);
@@ -70,7 +76,9 @@ public class EditBatch extends HttpServlet {
 		}
 		else {
 			out.println("<h3>Sorry, Batch Details not modified</h3>");
-		}
+		}*/
+		out.println("</html>");
+		out.close();
 	}
 
 }

@@ -3,14 +3,21 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@ include file="Header.html" %>
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+         *{
+                background-color:burlywood;
+            }
+    </style>
 <meta charset="ISO-8859-1">
 <title>Search Batch</title>
 </head>
 <body>
-
+ 
+     
      <%
          ArrayList<String> batches = new ArrayList<String>();
          Db d = new Db();

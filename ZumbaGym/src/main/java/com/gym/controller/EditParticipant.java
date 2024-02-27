@@ -34,7 +34,13 @@ public class EditParticipant extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		Db d = new Db();
-		
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<style>");
+		out.println("*{");
+		out.println("background-color:burlywood;");
+		out.println("}");
+		out.println("</style>");
 		String p_id = request.getParameter("id");
 		int pid = Integer.parseInt(p_id);
 		
@@ -43,7 +49,7 @@ public class EditParticipant extends HttpServlet {
 		
 		out.println("<h3>Edit Participant</h3>");
 		for(Participant i: p) {
-			out.println("<form action='editparticipant' method='post'>");
+			out.println("<form action='updateparticipant' method='post'>");
 			out.println("<input type='hidden' name='id' value='"+pid+"'>");
 			out.println("<label>Participant Name</label>");
 			out.println("<input name='pname' value='"+i.name+"'><br>");
@@ -71,7 +77,7 @@ public class EditParticipant extends HttpServlet {
 		}
 		
 		
-		String  name = request.getParameter("pname");
+		/*String  name = request.getParameter("pname");
 		String pdob = request.getParameter("dob");
 		String pgend = request.getParameter("gender");
 		String batch = request.getParameter("bname");
@@ -86,9 +92,10 @@ public class EditParticipant extends HttpServlet {
 		}
 		else {
 			out.println("<h3>Update unsuccessful</h3>");
-		}
+		}*/
 		
-		
+		out.println("</html>");
+		out.close();
 		
 	}
 

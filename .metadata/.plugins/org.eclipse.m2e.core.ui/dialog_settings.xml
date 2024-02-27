@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="E:\Simplilearn\Backend_fsd\Java\mymvnwebapp"/>
 			<item value="E:\Simplilearn\Backend_fsd\Java"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -26,12 +27,14 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.skyhigh.my_custom_plug"/>
 			<item value="com.skyhigh.EasyFrieght"/>
 		</list>
 		<list key="groupId">
 			<item value="com.skyhigh"/>
 		</list>
 		<list key="artifactId">
+			<item value="my-custom-plug"/>
 			<item value="EasyFrieght"/>
 		</list>
 		<list key="projectNameTemplate">

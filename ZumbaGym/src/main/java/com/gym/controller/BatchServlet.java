@@ -32,6 +32,16 @@ public class BatchServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<style>");
+		out.println("*{");
+		out.println("background-color:burlywood;");
+		out.println("}");
+		out.println("table,tr,td{");
+		out.println("border: 1px solid black;");
+		out.println("}");
+		out.println("</style>");
 		Batch b = new Batch();
 		b.batchId = request.getParameter("bid");
 		b.batchName = request.getParameter("bname");
@@ -44,7 +54,7 @@ public class BatchServlet extends HttpServlet {
 		int res = db.addBatch(b);
 		
 		if(res > 0) {
-			String htmlRes = "<h1>New Batch Starting Soon on "+b.startdate+"</h1><br><a href='Participant.html'>Click Here For Batch Details</a>";
+			String htmlRes = "<h1>New Batch Starting Soon on "+b.startdate+"</h1><br><a href='Participant.jsp'>Click Here To Register</a>";
 			out.println(htmlRes);
 			
 			out.println("<h2>Batch Details</h2>");
@@ -64,7 +74,8 @@ public class BatchServlet extends HttpServlet {
 		else {
 			out.println("<h2>Batch not created</h2>");
 		}
-		
+		out.println("</html>");
+		out.close();
 		
 	}
 

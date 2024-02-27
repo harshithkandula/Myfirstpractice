@@ -36,6 +36,18 @@ public class DisplayAllBatches extends HttpServlet {
 		 Db d2 = new Db();
 	       ArrayList<Batch> bds = d2.fetchAllBatchesDetails();
 	       StringBuffer buff = new StringBuffer();
+	        out.println("<html>");
+			out.println("<head>");
+			out.println("<style>");
+			out.println("*{");
+			out.println("background-color:burlywood;");
+			out.println("}");
+			out.println("table{");
+			out.println("border: 1px solid black;");
+			out.println("}");
+			
+			out.println("</style>");
+			out.println("</head>"); 
 	       out.println("<h3>Batches<h3>");
 	       if(bds.size()>0){
 	    	   buff.append("<table>");
@@ -63,6 +75,7 @@ public class DisplayAllBatches extends HttpServlet {
 	       }
 	       
 	       out.println(buff.toString());
+	       out.println("</html>");
 	       out.close();
 	}
 

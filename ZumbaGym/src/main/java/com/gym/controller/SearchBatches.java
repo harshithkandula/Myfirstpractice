@@ -34,7 +34,13 @@ public class SearchBatches extends HttpServlet {
 		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<style>");
+		out.println("*{");
+		out.println("background-color:burlywood;");
+		out.println("}");
+		out.println("</style>");
 		String batch_name = request.getParameter("bname");
 		
 		//Batch b = new Batch();
@@ -53,6 +59,7 @@ public class SearchBatches extends HttpServlet {
 		else {
 			out.println("<h4>Batch Details Not Found</h4>");
 		}
+		out.println("</html>");
 		out.close();
 	}
 

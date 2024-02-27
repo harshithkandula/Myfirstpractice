@@ -33,7 +33,13 @@ public class UpdateParticipant extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		Db d = new Db();
-		
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<style>");
+		out.println("*{");
+		out.println("background-color:burlywood;");
+		out.println("}");
+		out.println("</style>");
 		String p_id = request.getParameter("id");
 		int id = Integer.parseInt(p_id);
 		String  name = request.getParameter("pname");
@@ -48,10 +54,15 @@ public class UpdateParticipant extends HttpServlet {
 		
 		if(result > 0) {
 			out.println("<h3>Participant Details Updated Successfully</h3>");
+			out.println("<a href='ParticipantDetails.jsp'>Click Here to naviage to Participant Details</a>");
 		}
 		else {
 			out.println("<h3>Update unsuccessful</h3>");
+			out.println("<a href='ParticipantDetails.jsp'>Click Here to naviage to Participant Details</a>");
 		}
+		
+		out.println("<html>");
+		out.close();
 	}
 
 }

@@ -76,16 +76,24 @@ public class Register extends HttpServlet {
 		
 		Db db = new Db();
 		int res = db.addParticipant(p);
-		
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<style>");
+		out.println("*{");
+		out.println("background-color:burlywood;");
+		out.println("}");
+		out.println("</style>");
+		out.println("</head>");
 		if(res > 0) {
-			String htmlResponse = "Thank you "+p.name+" for joining Zumba classes in our gym";
+			String htmlResponse = "Thank you "+p.name+" for joining "+p.batchname+" in our gym";
 			out.println(htmlResponse);
 		}
 		else {
 			out.println("<h1>Participant not added. Please try Again</h1>");
 		}
 		
-		
+		out.println("</html");
+		out.close();
 	}
 
 }
