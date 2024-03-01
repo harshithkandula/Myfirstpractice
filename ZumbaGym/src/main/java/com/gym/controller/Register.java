@@ -13,6 +13,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.gym.db.Db;
 import com.gym.model.Participant;
@@ -46,12 +47,21 @@ public class Register extends HttpServlet {
 		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
+		Db db = new Db();
 		Participant p = new Participant();
 		
 		p.name = request.getParameter("pname");
 		p.dob = request.getParameter("dob");
 		p.gender = request.getParameter("gender");
-		p.batchname = request.getParameter("bname");
+		String bid = request.getParameter("bname");
+		ArrayList<String> batchnm = db.getBatchName(bid);
+		if(batchnm.size()>0) {
+			for(String b: batchnm) {
+				p.batchname = b;
+			}
+		}
+
+		//p.batchname = request.getParameter("bname");
 		
 		/*String batch_name = request.getParameter("bname");
 		if(batch_name == "morning") {
@@ -74,7 +84,7 @@ public class Register extends HttpServlet {
 		p.address = request.getParameter("addr");
 		
 		
-		Db db = new Db();
+		
 		int res = db.addParticipant(p);
 		out.println("<html>");
 		out.println("<head>");

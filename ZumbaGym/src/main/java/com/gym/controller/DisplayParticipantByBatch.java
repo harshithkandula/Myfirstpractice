@@ -33,8 +33,11 @@ public class DisplayParticipantByBatch extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		String batchName = request.getParameter("b_name");
+		String bid = request.getParameter("b_name");
 		Db d = new Db();
+		ArrayList<String> bn = d.getBatchName(bid);
+		ArrayList<Participant> pdb = null;
+		
 		out.println("<html>");
 		out.println("<head>");
 		out.println("<style>");
@@ -46,7 +49,12 @@ public class DisplayParticipantByBatch extends HttpServlet {
 		out.println("}");
 		out.println("</style>");
 		out.println("</head>");
-		ArrayList<Participant> pdb = d.displayParticipantByBatch(batchName);
+		if(bn.size() > 0) {
+			for(String b:bn) {
+				pdb = d.displayParticipantByBatch(b);
+			}
+		}
+		
 		
 		StringBuffer buff = new StringBuffer();
 		if(pdb.size()>0) {
@@ -76,7 +84,7 @@ public class DisplayParticipantByBatch extends HttpServlet {
 			buff.append("</table>");
 		}
 		else {
-			out.println("<h3>No Participants registered in "+batchName+"</h3>");
+			out.println("<h3>No Participants registered in "+bn+"</h3>");
 		}
 		out.println(buff.toString());
 		out.println("</html>");

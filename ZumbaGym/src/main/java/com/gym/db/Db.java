@@ -86,6 +86,27 @@ public class Db {
 		return b;
 	}
 	
+	public ArrayList<String> getBatchName(String bid) {
+		ArrayList<String> batchname = new ArrayList<String>();
+		String sqlcmd = "select name from batch where id=?";
+		try {
+			ps=connection.prepareStatement(sqlcmd);
+			ps.setString(1, bid);
+			
+			ResultSet set = ps.executeQuery();
+			while(set.next()) {
+				String batchName = set.getString(1);
+				batchname.add(batchName);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return batchname;
+		
+	}
+
+	
 	public ArrayList<Batch> fetchBatchDetails(String bn){
 		ArrayList<Batch> bd = new ArrayList<Batch>();
 		String sqlcmd = "select * from batch where name=?";

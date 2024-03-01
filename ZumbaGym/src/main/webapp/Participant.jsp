@@ -1,3 +1,4 @@
+<%@page import="com.gym.model.Batch"%>
 <%@page import="java.util.ListIterator"%>
 <%@page import="com.gym.db.Db"%>
 <%@page import="java.util.ArrayList"%>
@@ -18,9 +19,9 @@
 <body>
 
       <%
-        ArrayList<String> batch_names = new ArrayList<String>();
+        ArrayList<Batch> batch_names = new ArrayList<Batch>();
         Db db = new Db();
-        batch_names = db.fetchAllBatches();
+        batch_names = db.fetchAllBatchesDetails();
         
       %>
      <form action="register" method="post">
@@ -34,15 +35,16 @@
          <br>
          <label>Batch Name</label>
          <select name="bname">
+              <option value="">-select Batch-</option>
              <%
-                ListIterator l = batch_names.listIterator();
-                 while(l.hasNext()){
-                	 String dv = l.next().toString();
-                	 %>
-                <option value=<%=dv%>><%=dv %></option> 
-                <%
-                 }
-             %>
+                if(batch_names.size()>0){
+                	for(Batch b: batch_names){
+                		%>
+                		<option value=<%=b.batchId %>><%=b.batchName %></option>
+                		<% 
+                	}
+                }
+                	 %> 
          </select><br>
          <label>Profession</label>
          <input type="text" name="job"><br>
