@@ -216,4 +216,15 @@
     <url-pattern>/UpdateBatch</url-pattern>
     <url-pattern>/updatebatch</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchBatchDetails</display-name>
+    <servlet-name>SearchBatchDetails</servlet-name>
+    <servlet-class>com.gym.controller.SearchBatchDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchBatchDetails</servlet-name>
+    <url-pattern>/SearchBatchDetails</url-pattern>
+    <url-pattern>/sbd</url-pattern>
+  </servlet-mapping>
 </web-app>

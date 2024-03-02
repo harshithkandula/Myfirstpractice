@@ -19,17 +19,17 @@
  
      
      <%
-         ArrayList<String> batches = new ArrayList<String>();
+         ArrayList<Batch> batches = new ArrayList<Batch>();
          Db d = new Db();
-         batches = d.fetchAllBatches();
+         batches = d.fetchAllBatchesDetails();
      %>
-     <form action="sb" method="post">
+     <form action="sbd" method="post">
           <select name="bname">
                 <option value="">--select--</option>
                 <%
-                   for(String batch: batches){
+                   for(Batch batch: batches){
                 	   %>
-                <option value=<%=batch %>><%=batch%></option>
+                <option value=<%=batch.batchId %>><%=batch.batchName%></option>
                 <%
                    }
                 %>
